@@ -15,6 +15,7 @@ object ConnectPool {
   conf.load(this.getClass.getClassLoader.getResourceAsStream("dbconfig.properties"))
 
   val getConf: String => String = (str: String) => conf.getProperty(str)
+  def getProperties = this.conf
 
   private val dbURL = getConf("url")
 
